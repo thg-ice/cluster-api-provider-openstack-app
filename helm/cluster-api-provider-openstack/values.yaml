@@ -2,7 +2,7 @@ tag: v0.7.1
 
 infrastructure:
   image:
-    name: capi-openstack
+    name: capi-openstack/capi-openstack-controller
 registry:
   domain: registry.k8s.io
 
