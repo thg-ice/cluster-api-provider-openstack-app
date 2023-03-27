@@ -1,14 +1,10 @@
-tag: v0.6.3
+tag: v0.7.1
 
 infrastructure:
   image:
-    name: giantswarm/capi-openstack-controller
+    name: capi-openstack
 registry:
-  domain: quay.io
-
-project:
-  branch: "[[ .Branch ]]"
-  commit: "[[ .SHA ]]"
+  domain: registry.k8s.io
 
 crds:
   install: true
