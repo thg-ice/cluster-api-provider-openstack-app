@@ -4,8 +4,6 @@ metadata:
   annotations:
     cert-manager.io/inject-ca-from: '{{ .Release.Namespace }}/capo-serving-cert'
   labels:
-    app.giantswarm.io/branch: '{{ .Values.project.branch }}'
-    app.giantswarm.io/commit: '{{ .Values.project.commit }}'
     app.kubernetes.io/instance: '{{ .Release.Name }}'
     app.kubernetes.io/managed-by: '{{ .Release.Service }}'
     app.kubernetes.io/name: '{{ .Chart.Name }}'
@@ -20,7 +18,7 @@ webhooks:
     service:
       name: capo-webhook-service
       namespace: '{{ .Release.Namespace }}'
-      path: /mutate-infrastructure-cluster-x-k8s-io-v1alpha5-openstackcluster
+      path: /mutate-infrastructure-cluster-x-k8s-io-v1alpha6-openstackcluster
   failurePolicy: Fail
   matchPolicy: Equivalent
   name: default.openstackcluster.infrastructure.cluster.x-k8s.io
@@ -28,7 +26,7 @@ webhooks:
   - apiGroups:
     - infrastructure.cluster.x-k8s.io
     apiVersions:
-    - v1alpha5
+    - v1alpha6
     operations:
     - CREATE
     - UPDATE
@@ -41,7 +39,7 @@ webhooks:
     service:
       name: capo-webhook-service
       namespace: '{{ .Release.Namespace }}'
-      path: /mutate-infrastructure-cluster-x-k8s-io-v1alpha5-openstackclustertemplate
+      path: /mutate-infrastructure-cluster-x-k8s-io-v1alpha6-openstackclustertemplate
   failurePolicy: Fail
   matchPolicy: Equivalent
   name: default.openstackclustertemplate.infrastructure.cluster.x-k8s.io
@@ -49,7 +47,7 @@ webhooks:
   - apiGroups:
     - infrastructure.cluster.x-k8s.io
     apiVersions:
-    - v1alpha5
+    - v1alpha6
     operations:
     - CREATE
     - UPDATE
@@ -62,7 +60,7 @@ webhooks:
     service:
       name: capo-webhook-service
       namespace: '{{ .Release.Namespace }}'
-      path: /mutate-infrastructure-cluster-x-k8s-io-v1alpha5-openstackmachine
+      path: /mutate-infrastructure-cluster-x-k8s-io-v1alpha6-openstackmachine
   failurePolicy: Fail
   matchPolicy: Equivalent
   name: default.openstackmachine.infrastructure.cluster.x-k8s.io
@@ -70,7 +68,7 @@ webhooks:
   - apiGroups:
     - infrastructure.cluster.x-k8s.io
     apiVersions:
-    - v1alpha5
+    - v1alpha6
     operations:
     - CREATE
     - UPDATE
